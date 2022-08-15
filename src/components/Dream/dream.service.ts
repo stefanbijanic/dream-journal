@@ -1,4 +1,4 @@
-import {DeleteResult} from "typeorm";
+import {createQueryBuilder, DataSource, DeleteResult, getConnection} from "typeorm";
 import ErrorResponse from "../../common/error-response.interface";
 import {Dream, DreamTypes} from "./dream.entity";
 import {CreateDreamDto} from "./dto/create-dream.dto";
@@ -97,6 +97,36 @@ export default class DreamService {
             const result = await Dream.delete({
                 dream_id: dreamId,
             })
+
+            return result;
+        } catch (error) {
+            return({
+                errorCode: error?.errno,
+                errorMessage: error?.sqlMessage,
+            })
+        }
+    }
+
+    public async dreamSearch(querySerch) {
+        const page = querySerch?.page;
+        const limit = querySerch?.limit;
+        const startIndex = (page - 1) * limit;
+        const endIndex = page * limit;
+
+        try {
+            const dreams = await getConnection()
+            .createQueryBuilder()
+            .select("dream")
+            .from(Dream, "dream")
+            .where("dream.dream_name LIKE :title AND dream.dream_type::text ILIKE :dream_type AND (dream.date BETWEEN :start_date AND :end_date)", {
+                title: "%" + querySerch?.title + "%",
+                dream_type: "%" + querySerch?.dream_type + "%",
+                start_date:  querySerch?.start_date,
+                end_date: querySerch?.end_date,
+            })
+            .getMany()
+
+            const result = dreams.slice(startIndex, endIndex);
 
             return result;
         } catch (error) {

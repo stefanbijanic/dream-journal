@@ -56,4 +56,12 @@ export default class DreamController extends BaseController {
 
         res.send(result);
     }
+
+    public async dreamSearch(req: Request, res: Response, next: NextFunction) {
+        const querySearch = req.query;
+
+        const dreams = await this.services.dreamService.dreamSearch(querySearch);
+
+        res.send(dreams);
+    }
 }

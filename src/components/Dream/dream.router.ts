@@ -14,5 +14,7 @@ export default class DreamRouter implements Routers {
         app.get("/dream/:id", dreamController.getDreamById.bind(dreamController))
         app.put("/dream/:id", dreamController.editDreamById.bind(dreamController))
         app.delete("/dream/:id", dreamController.deleteDreamById.bind(dreamController))
+
+        app.get("/dream-search", dreamController.dreamSearch.bind(dreamController))
     }
 }
