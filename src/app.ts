@@ -65,7 +65,7 @@ async function main() {
     });
 
     app.listen(Config.server.port, async () => {
-        console.log("Server running on port 3001")
+        console.log(`Server running on port ${Config.server.port}`)
     });
 }
 
