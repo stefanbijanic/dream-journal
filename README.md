@@ -5,7 +5,7 @@
 * 1. Create the dataabase in Postgres named "dream-jurnal" or using the sql dump in ./sql_dump/dream-jurnal.sql
 * you cal also copy the script from ./sql_dump/script.txt and run it in Postres
 
-* 2 Create .env file using the .env.EXAMPLE
+* 2. Create .env file using the .env.EXAMPLE
 
 * 3. Run "npm install" before running the application to install all dependencies
 
