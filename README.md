@@ -3,7 +3,7 @@
 # Requirements:
 
 * 1. Create the dataabase in Postgres named "dream-jurnal" or using the sql dump in ./sql_dump/dream-jurnal.sql
-* you cal also copy the script from ./sql_dump/script.txt and run it in Postres
+* you cal also copy the script from ./sql_dump/script.txt and run it in Postgres
 
 * 2. Create .env file using the .env.EXAMPLE
 
