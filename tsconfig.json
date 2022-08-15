@@ -4,6 +4,8 @@
         "declaration": true,
         "removeComments": true,
         "target": "ES6",
+        "experimentalDecorators": true,
+        "strict": false,
         "sourceMap": true,
         "outDir": "./dist",
         "typeRoots": [

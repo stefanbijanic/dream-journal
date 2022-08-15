@@ -1,9 +1,16 @@
 import * as express from "express";
+import "reflect-metadata";
 import {createConnection} from "typeorm";
 import Config from "./config/config";
+import DreamRouter, * as dreamRoutes from './components/Dream/dream.router';
+import Router from "./router";
+import ApplicationResources from "./common/application-resources.interface";
+import DreamService from "./components/Dream/dream.service";
+import {Dream} from "./components/Dream/dream.entity";
 
 async function main() {
     const app: express.Application = express();
+    let router = express.Router();
 
     app.use(express.json());
 
@@ -16,9 +23,9 @@ async function main() {
             password: Config.database.password,
             database: Config.database.database,
             synchronize: true,
-            logging: true,
+            // logging: true,
             entities: [
-
+                Dream,
             ]
         });
 
@@ -37,6 +44,15 @@ async function main() {
             dotfiles: Config.server.static.dotfiles,
         }),
     );
+    
+    const resources: ApplicationResources = {};
+    resources.services = {
+        dreamService: new DreamService(),
+    }
+
+    Router.setRoutes(app, resources, [
+        new DreamRouter(),
+    ])
 
     app.use((req, res) => {
         res.sendStatus(404);
