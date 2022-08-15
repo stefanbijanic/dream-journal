@@ -23,6 +23,12 @@ export class Dream extends BaseEntity {
     })
     dream_type: DreamTypes;
 
+    @Column("text")
+    description: string;
+
+    @Column("date")
+    date: Date;
+
     @CreateDateColumn()
     created_at: Date;
 

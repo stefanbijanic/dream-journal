@@ -9,5 +9,10 @@ export default class DreamRouter implements Routers {
 
         app.get("/dreams", dreamController.getAllDreams.bind(dreamController));
         app.get("/dream/types", dreamController.getAllDreamTypes.bind(dreamController));
+
+        app.post("/dream", dreamController.createDream.bind(dreamController))
+        app.get("/dream/:id", dreamController.getDreamById.bind(dreamController))
+        app.put("/dream/:id", dreamController.editDreamById.bind(dreamController))
+        app.delete("/dream/:id", dreamController.deleteDreamById.bind(dreamController))
     }
 }
