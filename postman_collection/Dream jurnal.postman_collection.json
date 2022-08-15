@@ -1,0 +1,688 @@
+{
+	"info": {
+		"_postman_id": "df191786-0ec7-4e07-9937-19a4f44c11c2",
+		"name": "Dream jurnal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15480458"
+	},
+	"item": [
+		{
+			"name": "Get all dream types",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/dream/types",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"dream",
+						"types"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get all dream types",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/dream/types",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"dream",
+								"types"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "81"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"51-CpDTnkXnFyuT4+8k3EN7xNom+GQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Aug 2022 11:29:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    \"normal dream\",\n    \"daydreams\",\n    \"lucid dreams\",\n    \"false awakening dreams\",\n    \"nightmares\"\n]"
+				}
+			]
+		},
+		{
+			"name": "Get All Dreams",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/dreams",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"dreams"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Dreams",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/dreams",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"dreams"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "574"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"23e-nGc/83W1pwVD4eR6FQbq6m7hjgg\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Aug 2022 14:16:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"dream_id\": 3,\n        \"dream_name\": \"lep san\",\n        \"dream_type\": \"daydreams\",\n        \"description\": \"bla bla bla\",\n        \"date\": \"2016-02-06\",\n        \"created_at\": \"2022-08-15T14:15:55.077Z\",\n        \"updated_at\": \"2022-08-15T14:15:55.077Z\"\n    },\n    {\n        \"dream_id\": 4,\n        \"dream_name\": \"lep san\",\n        \"dream_type\": \"daydreams\",\n        \"description\": \"bla bla bla\",\n        \"date\": \"2016-02-06\",\n        \"created_at\": \"2022-08-15T14:15:56.641Z\",\n        \"updated_at\": \"2022-08-15T14:15:56.641Z\"\n    },\n    {\n        \"dream_id\": 5,\n        \"dream_name\": \"lep san\",\n        \"dream_type\": \"daydreams\",\n        \"description\": \"bla bla bla\",\n        \"date\": \"2016-02-06\",\n        \"created_at\": \"2022-08-15T14:15:59.174Z\",\n        \"updated_at\": \"2022-08-15T14:15:59.174Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Create dream entry",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dreamName\": \"lep san\",\r\n    \"dreamType\": \"daydreams\",\r\n    \"description\": \"bla bla bla\",\r\n    \"date\": \"2016-02-06\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/dream",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"dream"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create dream entry",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dreamName\": \"lep san\",\r\n    \"dreamType\": \"daydreams\",\r\n    \"description\": \"bla bla bla\",\r\n    \"date\": \"2016-02-06\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/dream",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"dream"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "190"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"be-e/UEVANqCba8vRDiVzevOsBaNFc\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Aug 2022 13:46:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"dream_name\": \"lep san\",\n    \"dream_type\": \"daydreams\",\n    \"description\": \"bla bla bla\",\n    \"date\": \"2016-02-06\",\n    \"dream_id\": 1,\n    \"created_at\": \"2022-08-15T13:46:22.775Z\",\n    \"updated_at\": \"2022-08-15T13:46:22.775Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get dream by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/dream/5",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"dream",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get dream by ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/dream/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"dream",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "190"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"be-ke1xHUamlWIQWYLzsjGNY6QqymE\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Aug 2022 13:55:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"dream_id\": 1,\n    \"dream_name\": \"lep san\",\n    \"dream_type\": \"daydreams\",\n    \"description\": \"bla bla bla\",\n    \"date\": \"2016-02-06\",\n    \"created_at\": \"2022-08-15T13:46:22.775Z\",\n    \"updated_at\": \"2022-08-15T13:46:22.775Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Edit dream buy ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dreamName\": \"SAN\",\r\n    \"dreamType\": \"lucid dreams\",\r\n    \"description\": \"bla bla bla\",\r\n    \"date\": \"2016-02-06\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/dream/5",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"dream",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Edit dream buy ID",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dreamName\": \"lepsi san\",\r\n    \"dreamType\": \"lucid dreams\",\r\n    \"description\": \"bla bla bla\",\r\n    \"date\": \"2016-02-06\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/dream/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"dream",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "195"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c3-EWIi7HtooXVBXb8W7WDwgfjdaI4\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Aug 2022 14:07:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"dream_id\": 1,\n    \"dream_name\": \"lepsi san\",\n    \"dream_type\": \"lucid dreams\",\n    \"description\": \"bla bla bla\",\n    \"date\": \"2016-02-06\",\n    \"created_at\": \"2022-08-15T13:46:22.775Z\",\n    \"updated_at\": \"2022-08-15T14:07:12.726Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete dream by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/dream/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"dream",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete dream by id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/dream/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"dream",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"17-PVQD/E0HAqMH9FRBYNXdIixTtCA\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Aug 2022 14:15:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"raw\": [],\n    \"affected\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Dream search",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3001/dream-search?title=lep san&dream_type=daydream&start_date=2016-02-03&end_date=2016-02-07&page=1&limit=5",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"dream-search"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "lep san"
+						},
+						{
+							"key": "dream_type",
+							"value": "daydream"
+						},
+						{
+							"key": "start_date",
+							"value": "2016-02-03"
+						},
+						{
+							"key": "end_date",
+							"value": "2016-02-07"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Dream search",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3001/dream-search?title=lep san&dream_type=daydream&start_date=2016-02-03&end_date=2016-02-07",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"dream-search"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "lep san"
+								},
+								{
+									"key": "dream_type",
+									"value": "daydream"
+								},
+								{
+									"key": "start_date",
+									"value": "2016-02-03"
+								},
+								{
+									"key": "end_date",
+									"value": "2016-02-07"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "383"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"17f-rBVKGW3oGsu/UvVQvP8W+Y1sRN0\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Aug 2022 16:01:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"dream_id\": 3,\n        \"dream_name\": \"lep san\",\n        \"dream_type\": \"daydreams\",\n        \"description\": \"bla bla bla\",\n        \"date\": \"2016-02-06\",\n        \"created_at\": \"2022-08-15T14:15:55.077Z\",\n        \"updated_at\": \"2022-08-15T14:15:55.077Z\"\n    },\n    {\n        \"dream_id\": 4,\n        \"dream_name\": \"lep san\",\n        \"dream_type\": \"daydreams\",\n        \"description\": \"bla bla bla\",\n        \"date\": \"2016-02-06\",\n        \"created_at\": \"2022-08-15T14:15:56.641Z\",\n        \"updated_at\": \"2022-08-15T14:15:56.641Z\"\n    }\n]"
+				},
+				{
+					"name": "Dream search",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3001/dream-search?title=lep san&dream_type=daydream&start_date=2016-02-03&end_date=2016-02-07&page=1&limit=5",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"dream-search"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "lep san"
+								},
+								{
+									"key": "dream_type",
+									"value": "daydream"
+								},
+								{
+									"key": "start_date",
+									"value": "2016-02-03"
+								},
+								{
+									"key": "end_date",
+									"value": "2016-02-07"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "956"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3bc-E/x4whscUm6RSIJkZI5L1CGNrN0\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Aug 2022 16:13:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"dream_id\": 3,\n        \"dream_name\": \"lep san\",\n        \"dream_type\": \"daydreams\",\n        \"description\": \"bla bla bla\",\n        \"date\": \"2016-02-06\",\n        \"created_at\": \"2022-08-15T14:15:55.077Z\",\n        \"updated_at\": \"2022-08-15T14:15:55.077Z\"\n    },\n    {\n        \"dream_id\": 4,\n        \"dream_name\": \"lep san\",\n        \"dream_type\": \"daydreams\",\n        \"description\": \"bla bla bla\",\n        \"date\": \"2016-02-06\",\n        \"created_at\": \"2022-08-15T14:15:56.641Z\",\n        \"updated_at\": \"2022-08-15T14:15:56.641Z\"\n    },\n    {\n        \"dream_id\": 6,\n        \"dream_name\": \"lep san\",\n        \"dream_type\": \"daydreams\",\n        \"description\": \"bla bla bla\",\n        \"date\": \"2016-02-06\",\n        \"created_at\": \"2022-08-15T16:06:46.925Z\",\n        \"updated_at\": \"2022-08-15T16:06:46.925Z\"\n    },\n    {\n        \"dream_id\": 7,\n        \"dream_name\": \"lep san\",\n        \"dream_type\": \"daydreams\",\n        \"description\": \"bla bla bla\",\n        \"date\": \"2016-02-06\",\n        \"created_at\": \"2022-08-15T16:06:47.597Z\",\n        \"updated_at\": \"2022-08-15T16:06:47.597Z\"\n    },\n    {\n        \"dream_id\": 8,\n        \"dream_name\": \"lep san\",\n        \"dream_type\": \"daydreams\",\n        \"description\": \"bla bla bla\",\n        \"date\": \"2016-02-06\",\n        \"created_at\": \"2022-08-15T16:06:48.211Z\",\n        \"updated_at\": \"2022-08-15T16:06:48.211Z\"\n    }\n]"
+				}
+			]
+		}
+	]
+}
