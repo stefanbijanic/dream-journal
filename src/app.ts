@@ -7,6 +7,7 @@ import Router from "./router";
 import ApplicationResources from "./common/application-resources.interface";
 import DreamService from "./components/Dream/dream.service";
 import {Dream} from "./components/Dream/dream.entity";
+import {CustomLogger} from "./common/custom-logger";
 
 async function main() {
     const app: express.Application = express();
@@ -23,7 +24,8 @@ async function main() {
             password: Config.database.password,
             database: Config.database.database,
             synchronize: true,
-            // logging: true,
+            logging: true,
+            logger: new CustomLogger(),
             entities: [
                 Dream,
             ]
