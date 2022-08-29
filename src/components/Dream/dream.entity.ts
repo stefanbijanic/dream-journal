@@ -14,7 +14,7 @@ export class Dream extends BaseEntity {
     dream_id: number;
 
     @Column("text")
-    dream_name: string;
+    title: string;
 
     @Column({
         type: "enum",

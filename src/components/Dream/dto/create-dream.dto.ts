@@ -6,7 +6,7 @@ const ajv = new Ajv();
 addFormats(ajv);
 
 interface CreateDreamDto {
-    dreamName: string;
+    title: string;
     dreamType: DreamTypes;
     description: string;
     date: Date;
@@ -15,7 +15,7 @@ interface CreateDreamDto {
 const CreateDreamDtoVerification = ajv.compile({
     type: "object",
     properties: {
-        dreamName: {
+        title: {
             type: "string",
             minLength: 2,
             maxLength: 32,
@@ -40,7 +40,7 @@ const CreateDreamDtoVerification = ajv.compile({
         },
     },
     required: [
-        "dreamName",
+        "title",
         "dreamType",
         "description",
         "date",

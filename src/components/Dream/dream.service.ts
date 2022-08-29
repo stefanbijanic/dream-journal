@@ -24,7 +24,7 @@ export default class DreamService {
     public async createDream(data: CreateDreamDto): Promise<Dream | ErrorResponse> {
         try {
             const dream = Dream.create({
-                dream_name: data.dreamName,
+                title: data.title,
                 dream_type: data.dreamType,
                 description: data.description,
                 date: data.date,
@@ -76,7 +76,7 @@ export default class DreamService {
                 })
             }
 
-            dream.dream_name = data.dreamName;
+            dream.title = data.title;
             dream.dream_type = data.dreamType;
             dream.description = data.description;
             dream.date = data.date;
@@ -118,7 +118,7 @@ export default class DreamService {
             .createQueryBuilder()
             .select("dream")
             .from(Dream, "dream")
-            .where("dream.dream_name LIKE :title AND dream.dream_type::text ILIKE :dream_type AND (dream.date BETWEEN :start_date AND :end_date)", {
+            .where("dream.title LIKE :title AND dream.dream_type::text ILIKE :dream_type AND (dream.date BETWEEN :start_date AND :end_date)", {
                 title: "%" + querySerch?.title + "%",
                 dream_type: "%" + querySerch?.dream_type + "%",
                 start_date:  querySerch?.start_date,
